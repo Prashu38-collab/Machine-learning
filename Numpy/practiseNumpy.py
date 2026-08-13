@@ -139,4 +139,22 @@ print(np.mean(arr))
 print(np.median(arr))
 print(np.std(arr))
 
+# 21. Remove common items from array
+a = np.array([1, 2, 3, 4, 5])
+b = np.array([5, 6, 7, 8, 9])
+mask=np.setdiff1d(a,b)
+print(mask)
 
+
+# 22. Normalize a NumPy array (values between 0 and 1)
+
+arr = np.array([10, 20, 30, 40, 50])
+# Min-Max Normalization formula
+normalized_arr = (arr - arr.min()) / (arr.max() - arr.min())
+print(normalized_arr)
+
+# 23. Get the positions where elements of array a and b match
+a = np.array([1, 2, 3, 4, 5])
+b = np.array([1, 4, 3, 7, 8])
+result=np.where(a==b)
+print(result)
