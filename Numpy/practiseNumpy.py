@@ -57,3 +57,86 @@ arr = np.arange(10)
 reverse=arr[::-1]
 print(reverse)
 
+# 10. Create a 3×3 identity matrix
+arr=np.eye((3))
+print(arr)
+
+# 11. Create a 4×4 array and extract its first row and last column
+
+matrix = np.arange(16).reshape(4, 4)
+print(matrix)
+
+print("First Row:", matrix[1:2])
+print("Last Column: ", matrix[:,-1])
+
+# 12. Extract Odd Rows and Even Columns
+
+sampleArray = np.array([
+    [3, 6, 9, 12], 
+    [15, 18, 21, 24], 
+    [27, 30, 33, 36], 
+    [39, 42, 45, 48], 
+    [51, 54, 57, 60]
+])
+
+
+print(sampleArray[1:4:2,0:3:2])
+
+# 13. Stack arrays horizontally
+a = np.array([1, 2, 3]) 
+b = np.array([4, 5, 6])
+
+arr=np.hstack((a,b))
+print(arr)
+
+# 14. Slice the first two rows and first two columns from a 4×4 array
+
+array=np.array([
+ [ 1 , 2 , 3 , 4],
+ [ 5 , 6 , 7 , 8],
+ [ 9, 10, 11, 12],
+ [13, 14 ,15 ,16]
+ ])
+print(array[0:2,0:2])
+
+# 15. Replace all odd numbers in a NumPy array with -1
+original=np.array([ 1 , 2 , 3 , 4 , 5,  6  ,7  ,8  ,9, 10])
+original[original%2!=0]=-1
+print(original)
+
+# 16. Get the indices of non-zero elements in an array
+arr = np.array([1, 0, 2, 0, 3, 0, 4])
+print(np.nonzero(arr))
+
+# 17. Find the common items between two arrays
+a = np.array([1, 2, 3, 2, 8, 4, 2, 4])
+b = np.array([2, 4, 5, 6, 8])
+print(np.intersect1d(a,b))
+
+# 18. Perform arithmetic operations on two NumPy arrays element-wise
+# Add two NumPy arrays element by element.
+# Multiply two NumPy arrays element by element.
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+
+
+result=np.add(a,b)
+result1=np.multiply(a,b)
+print(result1)
+
+# 19. Matrix multiplication
+# Write a code to compute the dot product of two NumPy arrays
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+
+result=np.dot(a,b)
+print(result)
+
+# 20. Compute the mean, median, and standard deviation of a NumPy array
+arr = np.array([10, 20, 30, 100, 200, 300])
+
+print(np.mean(arr))
+print(np.median(arr))
+print(np.std(arr))
+
+
