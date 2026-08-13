@@ -158,3 +158,153 @@ a = np.array([1, 2, 3, 4, 5])
 b = np.array([1, 4, 3, 7, 8])
 result=np.where(a==b)
 print(result)
+
+# 24. Extract numbers from an array
+
+arr = np.arange(15)
+mask1=arr[(arr>=5) & (arr<=10)]
+
+print(mask1)
+
+a=np.random.rand(3,2)
+print(a)
+
+# 25. Sorting a NumPy array based on a specific column
+sampleArray = np.array([[34, 43, 73], [82, 22, 12], [53, 94, 66]])
+result=sampleArray[:,1].argsort()
+sorted_Array=sampleArray[result]
+print(sorted_Array)
+print("Original array:")
+print(sampleArray)
+
+# 26. Delete and Insert a Column in a NumPy Array
+newColumn=[1,2,3]
+sampleArray = np.array([[34,43,73],[82,22,12],[53,94,66]])
+result=np.delete(sampleArray,1,axis=1)
+print(result)
+resultArray = np.insert(result, 1, newColumn, axis=1)
+print(resultArray)
+
+# 27. Swap column 1 and 2 in a 2D array fancy indexing
+rr = np.arange(9).reshape(3, 3)
+print(rr)
+rr[:,[1,2]]=rr[:,[2,1]]
+print(rr)
+
+# 28.  Generate 10 random integers between 1 and 100
+a=np.random.randint(1,101,10)
+print(a)
+
+
+#29.  Create a 3×3 array of random integers and sort it row-wise
+
+res=np.random.randint(1,30,size=(3,3))
+result=np.sort(res,axis=1)
+print(result)
+
+# 30. Shuffle an array randomly
+arr = np.arange(10)
+print("Original: ",arr)
+np.random.shuffle(arr)
+print(arr)
+
+# 31. Create a 5×5 2D array with 1s on the border and 0s inside.
+
+arr=np.ones(25).reshape(5,5)
+
+mask=arr[1:4,1:4]=0
+print(arr)
+
+# 32. Check if an array contains any NaN values.
+a = np.array([1, 2, np.nan, 4, 5])
+print(np.isnan(a).any())
+
+# 33. Sort the rows of a 2D array based on the values of the second column
+
+arr = np.array([[8, 4, 1],
+                [5, 2, 7],
+                [6, 9, 3]])
+res=arr[:,1].argsort()
+sorted_Arr=arr[res]
+print(sorted_Arr)
+
+# 34. Flatten a multi-dimensional NumPy array
+
+arr = np.array([[1, 2], [3, 4], [5, 6]])
+r=np.ravel(arr)
+print(r)
+
+# 35. Stack two arrays vertically and horizontally
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+hstack=np.hstack((a,b))
+print(hstack)
+vstack=np.vstack((a,b))
+print(vstack)
+
+# 36. Split an array into 3 equal parts
+arr = np.arange(9)
+result=np.split(arr,3)
+print(result)
+
+# 37. Perform Addition and Squaring on Arrays
+arrayOne = np.array([[5, 6, 9], [21, 18, 27]])
+arrayTwo = np.array([[15, 33, 24], [4, 7, 1]])
+result=arrayOne+arrayTwo
+print(result**2)
+
+
+# 38. Invert a matrix
+arr = np.array([[1, 2], [3, 4]])
+result=np.linalg.inv(arr)
+print(result)
+
+# 39. Use boolean indexing to filter values less than a given number
+
+arr = np.array([5, 12, 29, 30, 44, 7, 18])
+mask=arr[arr<30]
+print(mask)
+
+# 40. Count the number of occurrences of each unique element
+arr = np.array([2, 3, 2, 5, 3, 3, 2, 5])
+result,counts=np.unique(arr,return_counts=True)
+for v, c in zip(result, counts):
+    print(f"Value {v} occurs {c} time(s)")
+
+
+# 41. Find the intersection and union of two arrays
+a = np.array([1, 2, 3, 5, 7])
+b = np.array([3, 4, 5, 6, 7])
+result=np.intersect1d(a,b)
+result1=np.union1d(a,b)
+print(result1)
+
+
+# 42.  Transpose a matrix
+
+arr = np.array([[1, 2], [3, 4]])
+r=np.transpose(arr)
+print(r)
+
+# 43. Compute the eigenvalues and eigenvectors of a matrix
+
+A = np.array([[4, 2],
+              [1, 3]])
+
+eigvals, eigvecs = np.linalg.eig(A)
+print("Eigenvalues:\n", eigvals)
+print("Eigenvectors (columns):\n", eigvecs)
+
+# 44. Solve a linear equation x + 2y = 8 and 3x + 4y = 18.
+
+A = np.array([[1, 2], [3, 4]])
+b = np.array([8, 18])
+solution = np.linalg.solve(A, b)
+print(solution)
+
+# 45. Create an 8×8 checkerboard pattern using 0s and 1s
+
+a=np.zeros(64).reshape(8,8)
+a[1::2,::2]=1
+a[::2,1::2]=1
+print(a)
