@@ -35,4 +35,25 @@ print(arr1)
 print(arr)
 
 # 6. Create a 1D array of 10 evenly spaced values between 5 and 50
+arr=np.arange(5,51,5)
+print(arr)
+# or i can do this particularly as 
+arr=np.linspace(5,50,10)
+print(arr)
+
+# 7. Convert a Python list into a NumPy array
+
+arr=np.array([1,2,4,5])
+print(arr)
+
+# 8.  Find the memory size of a NumPy array of numbers from 0 to 9
+
+arr=arr=np.array([1,2,3,4,9,5,6,7,8,0],dtype=np.uint64) #bydefualt its unit=64
+print(arr.nbytes)
+
+# 9. Reverse a 1D NumPy array
+
+arr = np.arange(10)
+reverse=arr[::-1]
+print(reverse)
 
