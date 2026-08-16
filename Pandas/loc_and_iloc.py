@@ -85,3 +85,6 @@ print(df.iloc[[0,3,6]])
 # Get columns at positions 0, 2, and 4.
 print(df.iloc[:,[0,2,4]])
 
+# change the index 
+df.index = ["a", "b", "c", "d", "e", "f", "g", "h"]
+print(df)

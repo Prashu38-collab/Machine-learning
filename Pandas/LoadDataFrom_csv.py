@@ -38,3 +38,21 @@ df.drop(df[df.name =="siya"].index,inplace=True)
 print(df)
 
 
+print(df)
+
+df["DOJ"]=["2024-09-29","2023-09-09","2022-08-03","2012-09-03","2022-09-07"]
+print(df)
+# current data type of doj is obect
+print(df['DOJ'].dtype)
+# changing to datetime
+df['DOJ']=pd.to_datetime(df['DOJ'])
+
+print(df['DOJ'].dtype)
+print(df['DOJ'].dt.year)
+
+# Handling Missing values
+print(df.isnull())
+
+# Aggregation and Group by 
+
+print(df['Team'].value_counts)
